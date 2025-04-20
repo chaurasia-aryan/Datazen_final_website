@@ -65,7 +65,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-hidden" style={{ position: 'relative' }}>
       {/* Scroll progress indicator at top of page */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-red z-50"

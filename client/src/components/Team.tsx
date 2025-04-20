@@ -1,12 +1,19 @@
-import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { Users, Sparkles, Award, ChevronRight, ChevronLeft } from "lucide-react";
+import { useRef, useState } from "react";
+import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { 
+  Users, Sparkles, Award, ChevronRight, ChevronLeft, 
+  Linkedin, Github, Twitter, ExternalLink
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export default function Team() {
   const containerRef = useRef(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
+  
+  // State for member modal
+  const [selectedMember, setSelectedMember] = useState<(typeof teamMembers)[0] | null>(null);
   
   // Parallax effect for decorative elements
   const { scrollYProgress } = useScroll({
