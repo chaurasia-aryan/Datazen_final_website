@@ -240,6 +240,15 @@ export default function Timeline() {
             justify-content: center !important;
             box-shadow: 0 0 0 4px white, 0 2px 10px rgba(0,0,0,0.2) !important;
           }
+          
+          .vertical-timeline-element-icon svg {
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
         `}} />
       </div>
     </section>

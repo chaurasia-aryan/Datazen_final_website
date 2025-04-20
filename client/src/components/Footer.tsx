@@ -132,12 +132,14 @@ export default function Footer() {
       {/* Background pattern */}
       <DataPattern />
       
-      {/* Back to top button */}
+      {/* Back to top button - fixed position so it's always visible */}
       <motion.a 
         href="#home"
-        className="absolute -top-6 right-6 md:right-12 w-12 h-12 bg-gradient-red rounded-full flex items-center justify-center shadow-lg transform hover:-translate-y-1 transition-transform duration-300"
-        style={{ y: y1 }}
+        className="fixed bottom-6 right-6 md:right-12 w-12 h-12 bg-gradient-red rounded-full flex items-center justify-center shadow-lg transform hover:-translate-y-1 transition-transform duration-300 z-50"
         whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <ArrowUp className="text-white" size={20} />
       </motion.a>

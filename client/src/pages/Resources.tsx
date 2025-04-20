@@ -38,13 +38,15 @@ export default function Resources() {
   const y2 = useTransform(scrollYProgress, [0, 1], [50, -200]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   
-  // Animation variants
+  // Animation variants with better performance
   const containerAnimation = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+        staggerDirection: 1
       }
     }
   };
@@ -54,7 +56,24 @@ export default function Resources() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { 
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+  
+  // Function to handle resource tabs animation to prevent blank screen
+  const handleTabChange = (value: string) => {
+    // Force visibility when tab changes
+    const container = document.getElementById(`resources-${value}`);
+    if (container) {
+      // Make sure animations don't cause blank state
+      const items = container.querySelectorAll('.resource-card');
+      items.forEach((item) => {
+        (item as HTMLElement).style.opacity = '1';
+        (item as HTMLElement).style.transform = 'translateY(0)';
+      });
     }
   };
   
@@ -353,7 +372,7 @@ export default function Resources() {
       <motion.div
         variants={itemAnimation}
         whileHover={{ y: -5 }}
-        className="h-full"
+        className="h-full resource-card"
       >
         <Card className="h-full flex flex-col">
           <CardHeader>
@@ -463,7 +482,7 @@ export default function Resources() {
             />
           </motion.div>
           
-          <Tabs defaultValue="ai" className="w-full">
+          <Tabs defaultValue="ai" className="w-full" onValueChange={handleTabChange}>
             <TabsList className="grid w-full grid-cols-3 mb-12">
               <TabsTrigger value="ai" className="text-base">
                 <Brain className="mr-2 h-4 w-4" /> Artificial Intelligence
@@ -478,6 +497,7 @@ export default function Resources() {
             
             <TabsContent value="ai">
               <motion.div 
+                id="resources-ai"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 variants={containerAnimation}
                 initial="hidden"
