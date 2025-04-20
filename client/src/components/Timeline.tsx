@@ -20,14 +20,14 @@ export default function Timeline() {
   // Get appropriate icon for each timeline item
   const getTimelineIcon = (index: number) => {
     switch (index) {
-      case 0: return <Fingerprint className="w-5 h-5" />; // Foundation
-      case 1: return <Lightbulb className="w-5 h-5" />; // Workshop
-      case 2: return <Network className="w-5 h-5" />; // Virtual
-      case 3: return <Code className="w-5 h-5" />; // Partnerships
-      case 4: return <Rocket className="w-5 h-5" />; // Hackathon
-      case 5: return <Beaker className="w-5 h-5" />; // Research
-      case 6: return <Clock className="w-5 h-5" />; // Present
-      default: return <Fingerprint className="w-5 h-5" />;
+      case 0: return <Fingerprint className="w-7 h-7" />; // Foundation
+      case 1: return <Lightbulb className="w-7 h-7" />; // Workshop
+      case 2: return <Network className="w-7 h-7" />; // Virtual
+      case 3: return <Code className="w-7 h-7" />; // Partnerships
+      case 4: return <Rocket className="w-7 h-7" />; // Hackathon
+      case 5: return <Beaker className="w-7 h-7" />; // Research
+      case 6: return <Clock className="w-7 h-7" />; // Present
+      default: return <Fingerprint className="w-7 h-7" />;
     }
   };
   
@@ -248,6 +248,17 @@ export default function Timeline() {
             transform: translate(-50%, -50%) !important;
             margin: 0 !important;
             padding: 0 !important;
+            height: 24px !important;
+            width: 24px !important;
+          }
+          
+          /* Ensure the icon container has proper dimensions and centered content */
+          .vertical-timeline-element-icon * {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
           }
         `}} />
       </div>
