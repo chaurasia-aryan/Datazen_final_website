@@ -69,16 +69,10 @@ export default function Activities() {
       color: "var(--power-red)"
     },
     {
-      title: "Industry Collaborations",
-      description: "Partnerships with leading companies to bridge the gap between academic knowledge and industry applications.",
-      icon: <Settings size={24} />,
-      color: "var(--vitality-red)"
-    },
-    {
       title: "Data Science Community",
       description: "A thriving community of data enthusiasts sharing knowledge, resources, and opportunities.",
       icon: <Database size={24} />,
-      color: "var(--somaiya-black)"
+      color: "var(--vitality-red)"
     }
   ];
   

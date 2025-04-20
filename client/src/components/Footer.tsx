@@ -143,37 +143,18 @@ export default function Footer() {
       </motion.a>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
-          {/* Logo and About column */}
-          <div className="md:col-span-4 space-y-6">
+        <div className="flex flex-col md:flex-row justify-between items-center py-4 mb-6">
+          <div className="flex items-center gap-8 mb-6 md:mb-0">
             <Logo />
             
-            <p className="text-gray-400 mt-4 max-w-md leading-relaxed">
-              The official Data Science council of Somaiya Vidyavihar University, dedicated to fostering innovation and excellence in data science education and research.
-            </p>
-            
-            <div className="flex flex-wrap gap-3 pt-1">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-1.5 text-sm text-gray-400"
-                >
-                  <div className="text-[var(--vitality-red)]">
-                    {feature.icon}
-                  </div>
-                  <span>{feature.text}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <motion.a 
                   key={index}
                   href={social.href} 
                   className={`text-gray-400 transition-colors duration-300 ${social.color}`}
                   aria-label={social.label}
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   {social.icon}
@@ -181,92 +162,68 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
-          {/* Quick Links column */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4 relative inline-block">
-              Quick Links
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-red"></div>
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <motion.li 
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+          
+          <div className="flex flex-wrap gap-8">
+            <div>
+              <h3 className="text-sm font-semibold mb-3 text-white">Quick Links</h3>
+              <ul className="space-y-2">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-white text-xs transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-semibold mb-3 text-white">Resources</h3>
+              <ul className="space-y-2">
+                <li>
                   <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center"
+                    href="/resources" 
+                    className="text-gray-400 hover:text-white text-xs transition-colors duration-300"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--vitality-red)] mr-2 opacity-75"></div>
-                    {link.name}
+                    AI/ML Resources
                   </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources column */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4 relative inline-block">
-              Resources
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-red"></div>
-            </h3>
-            <ul className="space-y-3">
-              {resourceLinks.map((link, index) => (
-                <motion.li 
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--vitality-red)] mr-2 opacity-75"></div>
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter column */}
-          <div className="md:col-span-4">
-            <h3 className="text-lg font-semibold mb-4 relative inline-block">
-              Stay Updated
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-red"></div>
-            </h3>
-            <p className="text-gray-400 mb-4 leading-relaxed">
-              Subscribe to our newsletter for the latest updates on events, 
-              workshops, and data science opportunities.
-            </p>
-            <form className="flex max-w-md">
+                </li>
+                {resourceLinks.slice(0, 3).map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-white text-xs transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <form className="flex h-9">
               <Input 
                 type="email" 
-                placeholder="Your email address" 
-                className="rounded-r-none bg-gray-800/50 border-gray-700 focus:border-[var(--vitality-red)] focus:ring-[var(--vitality-red)] text-white"
+                placeholder="Your email" 
+                className="rounded-r-none bg-gray-800/50 border-gray-700 text-white h-9 text-xs w-40 md:w-auto"
               />
-              <Button type="submit" className="rounded-l-none bg-gradient-red hover:opacity-90">
-                <Mail className="h-4 w-4 mr-2" />
-                <span>Subscribe</span>
+              <Button type="submit" size="sm" className="rounded-l-none bg-gradient-red hover:opacity-90 h-9 px-3">
+                <Mail className="h-3 w-3" />
               </Button>
             </form>
-            <p className="text-xs text-gray-500 mt-3">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} DataZen - Somaiya Vidyavihar University. All rights reserved.
+        <div className="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-xs">
+          <p className="text-gray-500 mb-2 md:mb-0">
+            © {new Date().getFullYear()} DataZen - Somaiya Vidyavihar University
           </p>
-          <div className="flex flex-wrap gap-6">
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Contact</a>
+          <div className="flex gap-4">
+            <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="text-gray-500 hover:text-white transition-colors">Terms</a>
           </div>
         </div>
       </div>

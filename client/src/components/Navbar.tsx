@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "wouter";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
+  const isHomePage = location === "/";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,11 +24,16 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    if (isHomePage) {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      // Always show the shadow when not on homepage
+      setScrolled(true);
+    }
+  }, [isHomePage]);
 
   // Close menu when clicking on a link
   const handleLinkClick = () => {
@@ -38,18 +46,34 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#home" className="text-power-red font-poppins font-bold text-2xl">
+            <Link href="/" className="text-power-red font-poppins font-bold text-2xl">
               <span className="text-somaiya-black">Data</span>Zen
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="font-medium hover:text-power-red transition-colors">Home</a>
-            <a href="#about" className="font-medium hover:text-power-red transition-colors">About Us</a>
-            <a href="#activities" className="font-medium hover:text-power-red transition-colors">Activities</a>
-            <a href="#timeline" className="font-medium hover:text-power-red transition-colors">Timeline</a>
-            <a href="#contact" className="font-medium hover:text-power-red transition-colors">Contact</a>
+            {isHomePage ? (
+              // Home page navigation with hash links
+              <>
+                <a href="#home" className="font-medium hover:text-power-red transition-colors">Home</a>
+                <a href="#about" className="font-medium hover:text-power-red transition-colors">About Us</a>
+                <a href="#activities" className="font-medium hover:text-power-red transition-colors">Activities</a>
+                <a href="#timeline" className="font-medium hover:text-power-red transition-colors">Timeline</a>
+                <a href="#team" className="font-medium hover:text-power-red transition-colors">Team</a>
+                <Link href="/resources" className="font-medium hover:text-power-red transition-colors">Resources</Link>
+              </>
+            ) : (
+              // Other pages navigation
+              <>
+                <Link href="/" className="font-medium hover:text-power-red transition-colors">Home</Link>
+                <Link href="/#about" className="font-medium hover:text-power-red transition-colors">About Us</Link>
+                <Link href="/#activities" className="font-medium hover:text-power-red transition-colors">Activities</Link>
+                <Link href="/#timeline" className="font-medium hover:text-power-red transition-colors">Timeline</Link>
+                <Link href="/#team" className="font-medium hover:text-power-red transition-colors">Team</Link>
+                <Link href="/resources" className={`font-medium transition-colors ${location === '/resources' ? 'text-power-red' : 'hover:text-power-red'}`}>Resources</Link>
+              </>
+            )}
           </div>
           
           {/* Mobile Navigation Toggle */}
