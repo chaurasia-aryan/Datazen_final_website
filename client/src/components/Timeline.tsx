@@ -33,39 +33,39 @@ export default function Timeline() {
   
   const timelineItems = [
     {
-      year: "2018",
-      title: "Foundation",
-      description: "DataZen was established as a student initiative with the vision to create a platform for data science enthusiasts at Somaiya Vidyavihar University."
+      year: "July 2024",
+      title: "Annual Orientation",
+      description: "Kickoff of the 2024-25 academic year with our annual orientation event, introducing new students to DataZen's mission, vision, and upcoming activities."
     },
     {
-      year: "2019",
-      title: "First Data Science Workshop Series",
-      description: "Launched our inaugural workshop series covering fundamentals of data analysis, visualization techniques, and basic machine learning algorithms."
+      year: "August 2024",
+      title: "Python Bootcamp Series",
+      description: "Intensive 3-week Python programming bootcamp focusing on data analysis libraries, including pandas, NumPy, and matplotlib for beginners."
     },
     {
-      year: "2020",
-      title: "Virtual Transformation",
-      description: "Successfully pivoted to virtual events during the pandemic, expanding our reach and community through online workshops, webinars, and virtual hackathons."
+      year: "September 2024",
+      title: "Data Visualization Workshop",
+      description: "Hands-on workshop on creating impactful data visualizations using Tableau, Power BI, and D3.js, with industry experts sharing best practices."
     },
     {
-      year: "2021",
-      title: "Industry Partnerships",
-      description: "Established key partnerships with leading technology companies, creating internship opportunities and collaborative projects for our members."
+      year: "October 2024",
+      title: "AI Ethics Symposium",
+      description: "Panel discussion and workshop examining ethical considerations in artificial intelligence and responsible data science practices."
     },
     {
-      year: "2022",
-      title: "First National Hackathon",
-      description: "Organized #HackMasterz, our first national-level data science hackathon, attracting participants from universities across India."
+      year: "November 2024",
+      title: "#HackMasterz 3.0",
+      description: "Our annual flagship hackathon, bringing together students from across India to solve real-world data challenges over a 48-hour coding marathon."
     },
     {
-      year: "2023",
-      title: "Research Initiative Launch",
-      description: "Initiated collaborative research programs with faculty members, focusing on applying data science to solve real-world challenges in healthcare, environment, and education."
+      year: "January 2025",
+      title: "Machine Learning Masterclass",
+      description: "Advanced workshop series on machine learning algorithms, feature engineering, and model deployment with hands-on projects and mentorship."
     },
     {
-      year: "Present",
-      title: "Expanding Horizons",
-      description: "Today, DataZen continues to grow, focusing on innovation, inclusivity, and creating impactful learning experiences in the rapidly evolving field of data science."
+      year: "March 2025",
+      title: "DataZen Summit 2025",
+      description: "Annual summit featuring keynote speakers, research presentations, industry networking, and showcasing student projects from throughout the year."
     }
   ];
   
@@ -123,7 +123,7 @@ export default function Timeline() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6 }}
           >
-            Our Timeline
+            Upcoming Events
           </motion.span>
           
           <motion.h2 
@@ -132,9 +132,9 @@ export default function Timeline() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-[var(--somaiya-black)]">The </span>
-            <span className="text-gradient">DataZen</span>
-            <span className="text-[var(--somaiya-black)]"> Journey</span>
+            <span className="text-[var(--somaiya-black)]">Events </span>
+            <span className="text-gradient">Calendar</span>
+            <span className="text-[var(--somaiya-black)]"> 2024-25</span>
           </motion.h2>
           
           <motion.p 
@@ -143,7 +143,7 @@ export default function Timeline() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From our founding to the present day — follow our evolution as we've grown into Somaiya's premier data science community.
+            Mark your calendars for our exciting lineup of workshops, hackathons, and events planned for the upcoming academic year.
           </motion.p>
           
           <motion.div 

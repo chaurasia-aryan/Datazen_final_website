@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Activities from "@/components/Activities";
 import Timeline from "@/components/Timeline";
 import Stats from "@/components/Stats";
+import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -58,6 +59,7 @@ export default function Home() {
         <Activities />
         <Timeline />
         <Stats />
+        <Team />
       </main>
       
       <Footer />

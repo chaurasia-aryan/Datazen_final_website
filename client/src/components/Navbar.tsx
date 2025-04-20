@@ -94,41 +94,99 @@ export default function Navbar() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <a 
-                href="#home" 
-                className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
-                onClick={handleLinkClick}
-              >
-                Home
-              </a>
-              <a 
-                href="#about" 
-                className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
-                onClick={handleLinkClick}
-              >
-                About Us
-              </a>
-              <a 
-                href="#activities" 
-                className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
-                onClick={handleLinkClick}
-              >
-                Activities
-              </a>
-              <a 
-                href="#timeline" 
-                className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
-                onClick={handleLinkClick}
-              >
-                Timeline
-              </a>
-              <a 
-                href="#contact" 
-                className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
-                onClick={handleLinkClick}
-              >
-                Contact
-              </a>
+              {isHomePage ? (
+                // Home page mobile navigation
+                <>
+                  <a 
+                    href="#home" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Home
+                  </a>
+                  <a 
+                    href="#about" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    About Us
+                  </a>
+                  <a 
+                    href="#activities" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Activities
+                  </a>
+                  <a 
+                    href="#timeline" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Timeline
+                  </a>
+                  <a 
+                    href="#team" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Team
+                  </a>
+                  <Link 
+                    href="/resources" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Resources
+                  </Link>
+                </>
+              ) : (
+                // Other pages mobile navigation
+                <>
+                  <Link 
+                    href="/" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    href="/#about" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    About Us
+                  </Link>
+                  <Link 
+                    href="/#activities" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Activities
+                  </Link>
+                  <Link 
+                    href="/#timeline" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Timeline
+                  </Link>
+                  <Link 
+                    href="/#team" 
+                    className="block py-2 px-4 text-sm hover:bg-gray-100 rounded"
+                    onClick={handleLinkClick}
+                  >
+                    Team
+                  </Link>
+                  <Link 
+                    href="/resources" 
+                    className={`block py-2 px-4 text-sm rounded ${location === '/resources' ? 'bg-red-50 text-power-red' : 'hover:bg-gray-100'}`}
+                    onClick={handleLinkClick}
+                  >
+                    Resources
+                  </Link>
+                </>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
