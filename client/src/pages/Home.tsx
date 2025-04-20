@@ -72,21 +72,6 @@ export default function Home() {
         style={{ scaleX, transformOrigin: "0%" }}
       />
       
-      {/* Back to top button - Fixed position to avoid getting hidden */}
-      <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-[var(--power-red)] text-white flex items-center justify-center shadow-lg z-50"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ 
-          opacity: showBackToTop ? 1 : 0,
-          scale: showBackToTop ? 1 : 0.5,
-        }}
-        transition={{ duration: 0.3 }}
-        aria-label="Back to top"
-      >
-        <ArrowUp size={20} />
-      </motion.button>
-      
       {/* Decorative blobs positioned throughout the page */}
       <RedBlob className="top-[15%] left-[10%]" size={400} opacity={0.08} />
       <RedBlob className="top-[45%] right-[5%]" size={300} opacity={0.06} />
