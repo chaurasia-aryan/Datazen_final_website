@@ -418,7 +418,7 @@ export default function Resources() {
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-hidden">
       <Navbar />
       
-      <main className="flex-1 relative" ref={containerRef}>
+      <main className="flex-1 relative" ref={containerRef} style={{ position: 'relative' }}>
         {/* Background pattern */}
         <ResourcePattern />
         
@@ -511,6 +511,7 @@ export default function Resources() {
             
             <TabsContent value="ml">
               <motion.div 
+                id="resources-ml"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 variants={containerAnimation}
                 initial="hidden"
@@ -524,6 +525,7 @@ export default function Resources() {
             
             <TabsContent value="dataAnalytics">
               <motion.div 
+                id="resources-dataAnalytics"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 variants={containerAnimation}
                 initial="hidden"
