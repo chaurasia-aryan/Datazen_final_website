@@ -6,6 +6,7 @@ import Timeline from "@/components/Timeline";
 import Stats from "@/components/Stats";
 import Team from "@/components/Team";
 import Footer from "@/components/Footer";
+import PixelCard from "@/components/ui/PixelCard";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUp } from "lucide-react";
@@ -84,6 +85,7 @@ export default function Home() {
       
       <main className="flex-1 relative z-10">
         <Hero />
+        
         <About />
         <Activities />
         <Timeline />
