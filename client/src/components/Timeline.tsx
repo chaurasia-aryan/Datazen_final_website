@@ -33,40 +33,32 @@ export default function Timeline() {
   
   const timelineItems = [
     {
-      year: "July 2024",
-      title: "Annual Orientation",
+      year: "27th August 2024",
+      title: "DataZen Unplugged",
       description: "Kickoff of the 2024-25 academic year with our annual orientation event, introducing new students to DataZen's mission, vision, and upcoming activities."
     },
     {
-      year: "August 2024",
-      title: "Python Bootcamp Series",
-      description: "Intensive 3-week Python programming bootcamp focusing on data analysis libraries, including pandas, NumPy, and matplotlib for beginners."
+      year: "10th to 16th September 2024",
+      title: "Datazen Trek",
+      description: "A week-long virtual trek exploring the latest trends in data science and AI, featuring guest speakers from industry leaders and hands-on workshops."
     },
     {
-      year: "September 2024",
-      title: "Data Visualization Workshop",
-      description: "Hands-on workshop on creating impactful data visualizations using Tableau, Power BI, and D3.js, with industry experts sharing best practices."
+      year: "17th and 18th October 2024",
+      title: "Through The Lens",
+      description: "Hands-on workshop on Computer Vision techniques and applications, including image processing, object detection, and deep learning."
+     
     },
     {
-      year: "October 2024",
-      title: "AI Ethics Symposium",
-      description: "Panel discussion and workshop examining ethical considerations in artificial intelligence and responsible data science practices."
+      year: "25th Jan 2025",
+      title: "Case Study Competition",
+      description: "A competition where the students analyze and visualize the data using Tableau, showcasing their skills in data storytelling and insights."
+     
     },
     {
-      year: "November 2024",
-      title: "#HackMasterz 3.0",
-      description: "Our annual flagship hackathon, bringing together students from across India to solve real-world data challenges over a 48-hour coding marathon."
+      year: "1st and 2nd February 2025",
+      title: "DataThon 2025",
+      description: "Our flagship 48 hour Data Science and AI/ML based hackathon with a prize pool of over 2 lakhs and a footfall of over 1000 students."
     },
-    {
-      year: "January 2025",
-      title: "Machine Learning Masterclass",
-      description: "Advanced workshop series on machine learning algorithms, feature engineering, and model deployment with hands-on projects and mentorship."
-    },
-    {
-      year: "March 2025",
-      title: "DataZen Summit 2025",
-      description: "Annual summit featuring keynote speakers, research presentations, industry networking, and showcasing student projects from throughout the year."
-    }
   ];
   
   // Binary code background decorator component
