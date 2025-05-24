@@ -301,16 +301,17 @@ export default function About() {
                   animate={isInView ? "visible" : "hidden"}
                 >
                   {[1, 2, 3].map((i) => {
-                    const icons = {
+                    const icons: Record<1 | 2 | 3, JSX.Element> = {
                       1: <Github size={16} className="text-white" />,
                       2: <InstagramIcon size={16} className="text-white" />,
                       3: <Linkedin size={16} className="text-white" />,
                     };
-                    const hrefs = {
+                    const hrefs: Record<1 | 2 | 3, string> = {
                       1: "https://github.com/DataZenSomaiya", // replace with actual href
                       2: "https://www.instagram.com/datazensomaiya/",
                       3: "https://www.linkedin.com/company/datazen-somaiya/?originalSubdomain=in",
                     };
+                    const key = i as 1 | 2 | 3;
                     return (
                       <motion.div
                         key={i}
@@ -318,11 +319,11 @@ export default function About() {
                         whileHover={{ scale: 1.05 }}
                       >
                         <a
-                          href={hrefs[i]}
-                          aria-label={`Link for ${i === 1 ? 'Github' : i === 2 ? 'InstagramIcon' : 'LinkedIn'}`}
+                          href={hrefs[key]}
+                          aria-label={`Link for ${key === 1 ? 'Github' : key === 2 ? 'InstagramIcon' : 'LinkedIn'}`}
                           className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center transition-colors hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-white"
                         >
-                          {icons[i]}
+                          {icons[key]}
                         </a>
                       </motion.div>
                     );
