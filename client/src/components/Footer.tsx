@@ -1,4 +1,4 @@
-import { Mail, Github, Twitter, Linkedin, ArrowUp, Database, BarChart, Code } from "lucide-react";
+import { Mail, Github, Twitter, Linkedin, ArrowUp, Database, BarChart, Code,InstagramIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
@@ -33,19 +33,19 @@ export default function Footer() {
   const socialLinks = [
     { 
       icon: <Github className="h-5 w-5" />, 
-      href: "#", 
+      href: "https://github.com/DataZenSomaiya", 
       label: "GitHub",
       color: "hover:text-white"
     },
     { 
-      icon: <Twitter className="h-5 w-5" />, 
-      href: "#", 
-      label: "Twitter",
+      icon: <InstagramIcon className="h-5 w-5" />, 
+      href: "https://www.instagram.com/datazensomaiya/", 
+      label: "Instagram",
       color: "hover:text-blue-400"
     },
     { 
       icon: <Linkedin className="h-5 w-5" />, 
-      href: "#", 
+      href: "https://www.linkedin.com/company/datazen-somaiya/?originalSubdomain=in", 
       label: "LinkedIn",
       color: "hover:text-blue-500"
     }

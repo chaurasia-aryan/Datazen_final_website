@@ -65,7 +65,7 @@ function Stat({ value, label, description, icon, delay }: StatProps) {
         <div className="flex-1">
           <div className="flex items-baseline gap-1">
             <div className="text-4xl md:text-5xl font-bold tracking-tight">{count}</div>
-            <div className="text-xl font-bold text-white/80">+</div>
+            <div className="text-xl font-bold text-black/80">+</div>
           </div>
           
           <h3 className="text-xl font-semibold mt-1 mb-2">{label}</h3>
@@ -104,33 +104,27 @@ export default function Stats() {
   
   const stats = [
     { 
-      value: 1000, 
-      label: "Students Impacted", 
-      description: "Empowering the next generation of data scientists across campus.",
+      value: 10, 
+      label: "Industrial Collaborations", 
+      description: "Collaborations with leading tech companies and organizations.",
       icon: <Users className="w-5 h-5 text-white" />,
       delay: 0.1 
     },
     { 
-      value: 50, 
+      value: 5, 
       label: "Workshops & Events", 
       description: "Hands-on learning experiences and networking opportunities.",
       icon: <Award className="w-5 h-5 text-white" />,
       delay: 0.2 
     },
     { 
-      value: 25, 
-      label: "Industry Partners", 
-      description: "Collaborations with leading tech companies and organizations.",
+      value: 1600, 
+      label: "Students Impacted", 
+      description: "Empowering the next generation of data scientists across campus.",
       icon: <BarChart3 className="w-5 h-5 text-white" />,
-      delay: 0.3 
+      delay: 0.1
     },
-    { 
-      value: 15, 
-      label: "Research Projects", 
-      description: "Cutting-edge explorations at the frontier of data science.",
-      icon: <BookOpen className="w-5 h-5 text-white" />,
-      delay: 0.4 
-    }
+  
   ];
   
   // SVG pattern for background

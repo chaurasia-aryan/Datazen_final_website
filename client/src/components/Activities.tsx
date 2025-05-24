@@ -51,26 +51,21 @@ export default function Activities() {
       color: "var(--power-red)"
     },
     {
-      title: "Speaker Series",
+      title: "Speaker Sessions",
       description: "Engaging talks and panel discussions with thought leaders shaping the future of data science and AI technologies.",
       icon: <Play size={24} />,
       color: "var(--vitality-red)"
     },
+    
     {
-      title: "Research Projects",
-      description: "Collaborative research initiatives applying data science methodologies to solve real-world problems across domains.",
-      icon: <LineChart size={24} />,
-      color: "var(--somaiya-black)"
-    },
-    {
-      title: "Data Challenges",
+      title: "Competitions & Hackathons Based on Data Science",
       description: "Competitive events where participants solve real-world data problems and showcase innovative solutions.",
       icon: <PieChart size={24} />,
       color: "var(--power-red)"
     },
     {
       title: "Data Science Community",
-      description: "A thriving community of data enthusiasts sharing knowledge, resources, and opportunities.",
+      description: "Join our thriving community of 1600+ data enthusiasts over Whatsapp & Instagram — sharing knowledge, resources, and opportunities every day.",
       icon: <Database size={24} />,
       color: "var(--vitality-red)"
     }
@@ -207,13 +202,14 @@ export default function Activities() {
           </svg>
           
           <div className="text-white">
+        
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-white font-extrabold text-2xl md:text-3xl mb-4"
             >
-              #HackMasterz
+              #DATATHON
             </motion.div>
             
             <motion.div 
@@ -222,7 +218,7 @@ export default function Activities() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Annual Data Science Hackathon
+              Our Flagship Annual Data Science Hackathon
             </motion.div>
             
             <motion.ul
@@ -245,11 +241,12 @@ export default function Activities() {
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span className="text-white/90">Exciting prizes</span>
+                <span className="text-white/90">Prize Pool Worth ₹2 Lakh+</span>
               </li>
             </motion.ul>
             
             <motion.button 
+              onClick={() => window.open("#")}
               className="bg-white text-[var(--power-red)] font-medium px-6 py-2 rounded-lg shadow-lg hover:bg-white/90 transition-all flex items-center gap-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -393,23 +390,23 @@ export default function Activities() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          <motion.p 
+          {/* <motion.p 
             className="text-gray-600 mb-6 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             Join our vibrant community and be part of the data science revolution at Somaiya Vidyavihar University
-          </motion.p>
+          </motion.p> }
           
-          <motion.button 
+          {/* <motion.button 
             className="bg-gradient-red text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
             whileHover={{ y: -3 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             Upcoming Events
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { Brain, Code, Database, Layers, School, TrendingUp, Users } from "lucide-react";
+import { Mail, Github, Twitter, Linkedin, ArrowUp, BarChart,InstagramIcon ,Brain, Code, Database, Layers, School, TrendingUp, Users } from "lucide-react";
 
 export default function About() {
   const ref = useRef(null);
@@ -103,7 +103,13 @@ export default function About() {
       title: "Deep Learning",
       description: "Build neural networks that mimic human brain function to solve complex real-world problems.",
       icon: <Layers size={24} />
-    }
+    },
+    {
+    title: "Data Cleaning",
+    description: "Ensure data quality by identifying and correcting errors, inconsistencies, and missing values.",
+    icon: <Database size={24} />
+  }
+    
   ];
   
   // SVG design for abstract data flow pattern
@@ -294,23 +300,34 @@ export default function About() {
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                 >
-                  {[1, 2, 3].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center">
-                        {i === 1 ? (
-                          <Brain size={16} className="text-white" />
-                        ) : i === 2 ? (
-                          <Database size={16} className="text-white" />
-                        ) : (
-                          <Code size={16} className="text-white" />
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
+                  {[1, 2, 3].map((i) => {
+                    const icons: Record<1 | 2 | 3, JSX.Element> = {
+                      1: <Github size={16} className="text-white" />,
+                      2: <InstagramIcon size={16} className="text-white" />,
+                      3: <Linkedin size={16} className="text-white" />,
+                    };
+                    const hrefs: Record<1 | 2 | 3, string> = {
+                      1: "https://github.com/DataZenSomaiya", // replace with actual href
+                      2: "https://www.instagram.com/datazensomaiya/",
+                      3: "https://www.linkedin.com/company/datazen-somaiya/?originalSubdomain=in",
+                    };
+                    const key = i as 1 | 2 | 3;
+                    return (
+                      <motion.div
+                        key={i}
+                        className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <a
+                          href={hrefs[key]}
+                          aria-label={`Link for ${key === 1 ? 'Github' : key === 2 ? 'InstagramIcon' : 'LinkedIn'}`}
+                          className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center transition-colors hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-white"
+                        >
+                          {icons[key]}
+                        </a>
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
               </div>
             </div>
@@ -370,3 +387,4 @@ export default function About() {
     </section>
   );
 }
+
