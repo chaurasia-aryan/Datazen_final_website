@@ -264,7 +264,7 @@ export default function About() {
           ))}
         </motion.div>
         
-        {/* Focus Areas */}
+        {/* Focus Area*/}
         <motion.div 
           className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center"
           initial={{ opacity: 0 }}
